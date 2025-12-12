@@ -30,9 +30,9 @@ You can see the projects. You can learn the skills. You can help decide what get
 </div>
 </div>
 </div>
-<Button size="lg" className="bg-earth-green hover:bg-earth-green/90">
+<button className="px-8 py-4 bg-earth-green text-white font-medium rounded-lg hover:bg-earth-green/90 transition-colors text-lg">
 Become a Funding Member
-</Button>
+</button>
 </div>
 </div>
 </section>
