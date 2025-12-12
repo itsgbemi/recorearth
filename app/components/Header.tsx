@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { Leaf } from 'lucide-react'
-import Button from './ui/Button'
 
 export default function Header() {
 return (
@@ -17,7 +16,9 @@ return (
 </nav>
 <div className="flex items-center gap-4">
 <Link href="/login" className="text-sm font-medium hover:text-earth-green transition-colors">Login</Link>
-<Button>Sign Up</Button>
+<button className="px-4 py-2 bg-earth-green text-white font-medium rounded-lg hover:bg-earth-green/90 transition-colors">
+Sign Up
+</button>
 </div>
 </div>
 </header>
