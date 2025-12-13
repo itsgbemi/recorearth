@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { doc, setDoc } from 'firebase/firestore'
-import { auth, db } from '../../../lib/firebase'
+import { auth, db } from '../../lib/firebase'
 
 export default function SignUpPage() {
 const router = useRouter()
