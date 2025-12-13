@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuthContext } from '../components/AuthProvider'
 import { doc, getDoc } from 'firebase/firestore'
-import { db } from '../../../lib/firebase'
+import { db } from '../../lib/firebase'
 
 interface UserData {
 firstName: string
