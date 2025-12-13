@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { sendPasswordResetEmail } from 'firebase/auth'
-import { auth } from '../../../lib/firebase'
+import { auth } from '../../lib/firebase'
 
 export default function ForgotPasswordPage() {
 const [email, setEmail] = useState('')
