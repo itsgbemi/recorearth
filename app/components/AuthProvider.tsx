@@ -1,7 +1,7 @@
 'use client'
 import { createContext, useContext, useEffect, useState } from 'react'
-import { supabase } from '../../lib/supabase'
-import { User } from '@supabase/supabase-js'
+import { User, onAuthStateChanged } from 'firebase/auth'
+import { auth } from '../../lib/firebase'
 
 interface AuthContextType {
 user: User | null
@@ -16,22 +16,16 @@ const [user, setUser] = useState<User | null>(null)
 const [loading, setLoading] = useState(true)
 
 useEffect(() => {
-const checkUser = async () => {
-const { data: { session } } = await supabase.auth.getSession()
-setUser(session?.user ?? null)
+const unsubscribe = onAuthStateChanged(auth, (user) => {
+setUser(user)
 setLoading(false)
-}
-checkUser()
-const { data: { subscription } } = supabase.auth.onAuthStateChange(
-(event, session) => {
-setUser(session?.user ?? null)
-}
-)
-return () => subscription.unsubscribe()
+})
+
+return () => unsubscribe()
 }, [])
 
 const signOut = async () => {
-await supabase.auth.signOut()
+await auth.signOut()
 }
 
 return (
